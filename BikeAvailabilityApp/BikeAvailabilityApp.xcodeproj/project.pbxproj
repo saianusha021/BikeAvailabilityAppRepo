@@ -15,6 +15,9 @@
 		A804BC8322C1706000A81DDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A804BC8122C1706000A81DDA /* LaunchScreen.storyboard */; };
 		A804BC8E22C1706000A81DDA /* BikeAvailabilityAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A804BC8D22C1706000A81DDA /* BikeAvailabilityAppTests.swift */; };
 		A804BC9922C1706000A81DDA /* BikeAvailabilityAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A804BC9822C1706000A81DDA /* BikeAvailabilityAppUITests.swift */; };
+		A830F06522C1AAE600A19A8D /* HttpBikesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A830F06422C1AAE600A19A8D /* HttpBikesClient.swift */; };
+		A830F06622C1AAE600A19A8D /* HttpBikesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A830F06422C1AAE600A19A8D /* HttpBikesClient.swift */; };
+		A830F06722C1AAE600A19A8D /* HttpBikesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A830F06422C1AAE600A19A8D /* HttpBikesClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,7 @@
 		A804BC9422C1706000A81DDA /* BikeAvailabilityAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BikeAvailabilityAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A804BC9822C1706000A81DDA /* BikeAvailabilityAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeAvailabilityAppUITests.swift; sourceTree = "<group>"; };
 		A804BC9A22C1706000A81DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A830F06422C1AAE600A19A8D /* HttpBikesClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpBikesClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 				A804BC8122C1706000A81DDA /* LaunchScreen.storyboard */,
 				A804BC8422C1706000A81DDA /* Info.plist */,
 				A804BC7C22C1705F00A81DDA /* BikeAvailabilityApp.xcdatamodeld */,
+				A830F06422C1AAE600A19A8D /* HttpBikesClient.swift */,
 			);
 			path = BikeAvailabilityApp;
 			sourceTree = "<group>";
@@ -260,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A804BC7E22C1705F00A81DDA /* BikeAvailabilityApp.xcdatamodeld in Sources */,
+				A830F06522C1AAE600A19A8D /* HttpBikesClient.swift in Sources */,
 				A804BC7822C1705F00A81DDA /* ViewController.swift in Sources */,
 				A804BC7622C1705F00A81DDA /* AppDelegate.swift in Sources */,
 			);
@@ -270,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A804BC8E22C1706000A81DDA /* BikeAvailabilityAppTests.swift in Sources */,
+				A830F06622C1AAE600A19A8D /* HttpBikesClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A804BC9922C1706000A81DDA /* BikeAvailabilityAppUITests.swift in Sources */,
+				A830F06722C1AAE600A19A8D /* HttpBikesClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

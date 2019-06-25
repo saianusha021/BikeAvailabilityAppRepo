@@ -9,16 +9,23 @@
 import UIKit
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,BikeDataProtocol {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let hbc = HttpBikesClient()
-        hbc.getBikesData()
+        let hbc = HttpBikesClient(delegate: self)
+        hbc.getStationsData()
+    }
+    
+    func updateBikeData(arrayOfStations:[Station]) {
         
     }
     
+    func responseWithError(msg: String) {
+        
+    }
 
 }
 

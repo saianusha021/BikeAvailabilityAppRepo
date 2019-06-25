@@ -32,8 +32,10 @@ class HttpBikesClient: NSObject {
             }
             
             do {
-                let json = try JSONSerialization.jsonObject(with: data!, options: [])
-                print(json)
+                let json = try JSONSerialization.jsonObject(with: data!, options: []) as! NSDictionary
+               // print(json)
+               var stationsList = json.value(forKey: "stationBeanList")!
+                print(stationsList)
             } catch {
                 print("JSON error: \(error.localizedDescription)")
             }

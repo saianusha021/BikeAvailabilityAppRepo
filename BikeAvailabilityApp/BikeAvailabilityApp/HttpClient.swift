@@ -8,24 +8,30 @@
 
 import UIKit
 
-protocol StationDataDelegate {
+protocol StationDataProtocol {
     func updateStationData(arrayOfStationData:[Station])
     func errorWithMessage(msg:String)
 }
 
 class HttpClient: NSObject {
-    var delegate:StationDataDelegate
+    var delegate:StationDataProtocol
     let session:URLSession
-    let url:URL
-    
-    init(delegate:StationDataDelegate) {
+    var  url:URL
+
+    init(delegate:StationDataProtocol) {
         self.delegate = delegate
         session = URLSession.shared
         url = URL(string: "https://feeds.citibikenyc.com/stations/stations.json")!
     }
     func getStationData() {
         
+//        let session:URLSession
+//        var  url:URL
+//        session = URLSession.shared
+//        url = URL(string: "https://feeds.citibikenyc.com/stations/stations.json")!
+        
         var arrOfStations = [Station]()
+        
         let task = session.dataTask(with: url) { data, response, error in
             
             if error != nil || data == nil {
@@ -45,19 +51,21 @@ class HttpClient: NSObject {
             
             do {
                 let json = try JSONSerialization.jsonObject(with: data!, options: []) as! NSDictionary
-               var stationsList = json.value(forKey: "stationBeanList")! as! NSArray
-                print(stationsList.count)
+                let stationsList = json.value(forKey: "stationBeanList")! as! NSArray
+                //print(stationsList.count)
                 for stationDict in stationsList {
-                    var stationDictTemp = stationDict as! NSDictionary
+                    let stationDictTemp = stationDict as! NSDictionary
                     var s = Station()
-                    s.altitude = stationDictTemp["altitude"] as! String
-                    s.availableDocks = stationDictTemp["availableDocks"] as! Int
+                    //print("altitude---\(s.altitude)")
+                    s.stationName = stationDictTemp["stationName"] as! String
+                    s.availableBikes = (stationDictTemp["availableBikes"] as! Int)
                     arrOfStations.append(s)
                 }
                 self.delegate.updateStationData(arrayOfStationData: arrOfStations)
-                
+                return
             } catch {
                 self.delegate.errorWithMessage(msg: "JSON error: \(error.localizedDescription)")
+                return
             }
         }
         

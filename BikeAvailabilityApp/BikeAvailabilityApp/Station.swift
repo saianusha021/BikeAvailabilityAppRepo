@@ -26,5 +26,9 @@ struct Station {
     var statusKey:Int? = 0
     var statusvalue:String = ""
     var testStation:Int? = 0
-    var totalDocks:Int? = 0
+    var totalDocks:Int?
+    
+    init() {
+        self.totalDocks = 0
+    }
 }

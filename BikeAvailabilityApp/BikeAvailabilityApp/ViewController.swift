@@ -9,23 +9,34 @@
 import UIKit
 
 
-class ViewController: UIViewController,StationDataDelegate{
+class ViewController: UIViewController,StationDataProtocol{
     
     @IBOutlet weak var tableView: UITableView!
+    var sth:StationsTableViewHandler = StationsTableViewHandler()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        let hc = HttpClient(delegate:self)
-        hc.getStationData()
+        self.tableView.dataSource = sth
+        self.tableView.delegate = sth
+        self.showTableViewData()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "LabelCell")
     }
     
+
     func updateStationData(arrayOfStationData:[Station]) {
-        
+        sth.arrOfStations = arrayOfStationData
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     func errorWithMessage(msg:String) {
-        
+        print(msg)
+    }
+    
+    func showTableViewData() {
+        let hc = HttpClient(delegate:self)
+        hc.getStationData()
     }
 
 }

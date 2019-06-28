@@ -28,7 +28,8 @@ struct Station {
     var testStation:Int? = 0
     var totalDocks:Int?
     
-    init() {
-        self.totalDocks = 0
+    init(stationDict:[String:Any]) {
+        self.stationName = stationDict["stationName"] as! String
+        self.availableBikes = stationDict["availableBikes"] as! Int
     }
 }

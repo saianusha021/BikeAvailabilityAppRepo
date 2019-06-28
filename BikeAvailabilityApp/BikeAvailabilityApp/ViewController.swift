@@ -25,9 +25,7 @@ class ViewController: UIViewController,StationDataProtocol{
 
     func updateStationData(arrayOfStationData:[Station]) {
         sth.arrOfStations = arrayOfStationData
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
+        self.tableView.reloadData()
     }
     
     func errorWithMessage(msg:String) {

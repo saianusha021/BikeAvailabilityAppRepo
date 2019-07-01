@@ -19,7 +19,7 @@ class ViewController: UIViewController,StationDataProtocol{
         self.tableView.dataSource = sth
         self.tableView.delegate = sth
         self.showTableViewData()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "LabelCell")
+        //tableView.register(UITableViewCell.self, forCellReuseIdentifier: "LabelCell")
     }
     
 

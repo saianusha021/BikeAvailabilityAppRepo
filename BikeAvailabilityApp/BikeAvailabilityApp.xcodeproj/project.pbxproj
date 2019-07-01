@@ -20,6 +20,8 @@
 		A804BC8322C1706000A81DDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A804BC8122C1706000A81DDA /* LaunchScreen.storyboard */; };
 		A804BC8E22C1706000A81DDA /* BikeAvailabilityAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A804BC8D22C1706000A81DDA /* BikeAvailabilityAppTests.swift */; };
 		A804BC9922C1706000A81DDA /* BikeAvailabilityAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A804BC9822C1706000A81DDA /* BikeAvailabilityAppUITests.swift */; };
+		A80582E022CA49C700B2D95A /* StationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80582DF22CA49C700B2D95A /* StationTableViewCell.swift */; };
+		A80582E222CA4C8200B2D95A /* StationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80582E122CA4C8200B2D95A /* StationDetailViewController.swift */; };
 		A8F9DF9022C3D87800E974EA /* StationsTableViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F9DF8F22C3D87800E974EA /* StationsTableViewHandler.swift */; };
 		A8FDC5CD22C67BF700AA5D0A /* StationJsonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FDC5CC22C67BF700AA5D0A /* StationJsonModel.swift */; };
 		A8FDC5CE22C67BF700AA5D0A /* StationJsonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FDC5CC22C67BF700AA5D0A /* StationJsonModel.swift */; };
@@ -59,6 +61,8 @@
 		A804BC9422C1706000A81DDA /* BikeAvailabilityAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BikeAvailabilityAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A804BC9822C1706000A81DDA /* BikeAvailabilityAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeAvailabilityAppUITests.swift; sourceTree = "<group>"; };
 		A804BC9A22C1706000A81DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A80582DF22CA49C700B2D95A /* StationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTableViewCell.swift; sourceTree = "<group>"; };
+		A80582E122CA4C8200B2D95A /* StationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailViewController.swift; sourceTree = "<group>"; };
 		A8F9DF8F22C3D87800E974EA /* StationsTableViewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsTableViewHandler.swift; sourceTree = "<group>"; };
 		A8FDC5CC22C67BF700AA5D0A /* StationJsonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationJsonModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,7 +117,9 @@
 			children = (
 				A803D69B22C307CE0062C65A /* AppDelegate.swift */,
 				A804BC7722C1705F00A81DDA /* ViewController.swift */,
+				A80582DF22CA49C700B2D95A /* StationTableViewCell.swift */,
 				A804BC7922C1705F00A81DDA /* Main.storyboard */,
+				A80582E122CA4C8200B2D95A /* StationDetailViewController.swift */,
 				A804BC7F22C1706000A81DDA /* Assets.xcassets */,
 				A804BC8122C1706000A81DDA /* LaunchScreen.storyboard */,
 				A804BC8422C1706000A81DDA /* Info.plist */,
@@ -274,9 +280,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A80582E222CA4C8200B2D95A /* StationDetailViewController.swift in Sources */,
 				A803D65B22C2B2160062C65A /* HttpClient.swift in Sources */,
 				A8F9DF9022C3D87800E974EA /* StationsTableViewHandler.swift in Sources */,
 				A8FDC5CD22C67BF700AA5D0A /* StationJsonModel.swift in Sources */,
+				A80582E022CA49C700B2D95A /* StationTableViewCell.swift in Sources */,
 				A804BC7E22C1705F00A81DDA /* BikeAvailabilityApp.xcdatamodeld in Sources */,
 				A804BC7822C1705F00A81DDA /* ViewController.swift in Sources */,
 				A803D69C22C307CE0062C65A /* AppDelegate.swift in Sources */,

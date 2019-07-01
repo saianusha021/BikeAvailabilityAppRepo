@@ -27,9 +27,5 @@ struct Station {
     var statusvalue:String = ""
     var testStation:Int? = 0
     var totalDocks:Int?
-    
-    init(stationDict:[String:Any]) {
-        self.stationName = stationDict["stationName"] as! String
-        self.availableBikes = stationDict["availableBikes"] as! Int
-    }
+
 }

@@ -33,7 +33,9 @@ class StationsTableViewHandler: NSObject,UITableViewDataSource,UITableViewDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)
         let s:Station = arrOfStations[indexPath.row]
         print(s.stationName)
-        cell.textLabel?.text = "\(s.stationName)!            \(String(describing: s.availableBikes!))"
+        
+        
+        cell.textLabel?.text = "\(s.stationName!)           \(String(describing: s.availableBikes!))"
         
         return cell
     }

@@ -51,16 +51,11 @@ class HttpClient: NSObject {
             
             do {
                 let json = try JSONSerialization.jsonObject(with: data!, options: []) as! NSDictionary
-                let stationsList = json.value(forKey: "stationBeanList")! as! NSArray
-                print(stationsList.count)
-                for stationDict in stationsList {
-                    let stationDictTemp:[String:Any] = stationDict as! [String:Any]
-                    let s = Station(stationDict:stationDictTemp)
-                    arrOfStations.append(s)
-                }
                 
+                let jsonDataObj:StationJsonModel = try
+                      JSONDecoder().decode(StationJsonModel.self, from: data!)
                 DispatchQueue.main.async {
-                    self.delegate.updateStationData(arrayOfStationData: arrOfStations)
+                    self.delegate.updateStationData(arrayOfStationData: jsonDataObj.stationBeanList!)
                 }
             } catch {
                 self.delegate.errorWithMessage(msg: "JSON error: \(error.localizedDescription)")

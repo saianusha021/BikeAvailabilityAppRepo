@@ -20,9 +20,6 @@
 		A804BC8322C1706000A81DDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A804BC8122C1706000A81DDA /* LaunchScreen.storyboard */; };
 		A804BC8E22C1706000A81DDA /* BikeAvailabilityAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A804BC8D22C1706000A81DDA /* BikeAvailabilityAppTests.swift */; };
 		A804BC9922C1706000A81DDA /* BikeAvailabilityAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A804BC9822C1706000A81DDA /* BikeAvailabilityAppUITests.swift */; };
-		A830F06922C1B40A00A19A8D /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = A830F06822C1B40A00A19A8D /* Station.swift */; };
-		A830F06A22C1B40A00A19A8D /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = A830F06822C1B40A00A19A8D /* Station.swift */; };
-		A830F06B22C1B40A00A19A8D /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = A830F06822C1B40A00A19A8D /* Station.swift */; };
 		A8F9DF9022C3D87800E974EA /* StationsTableViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F9DF8F22C3D87800E974EA /* StationsTableViewHandler.swift */; };
 		A8FDC5CD22C67BF700AA5D0A /* StationJsonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FDC5CC22C67BF700AA5D0A /* StationJsonModel.swift */; };
 		A8FDC5CE22C67BF700AA5D0A /* StationJsonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FDC5CC22C67BF700AA5D0A /* StationJsonModel.swift */; };
@@ -62,7 +59,6 @@
 		A804BC9422C1706000A81DDA /* BikeAvailabilityAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BikeAvailabilityAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A804BC9822C1706000A81DDA /* BikeAvailabilityAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeAvailabilityAppUITests.swift; sourceTree = "<group>"; };
 		A804BC9A22C1706000A81DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A830F06822C1B40A00A19A8D /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		A8F9DF8F22C3D87800E974EA /* StationsTableViewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsTableViewHandler.swift; sourceTree = "<group>"; };
 		A8FDC5CC22C67BF700AA5D0A /* StationJsonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationJsonModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,7 +118,6 @@
 				A804BC8122C1706000A81DDA /* LaunchScreen.storyboard */,
 				A804BC8422C1706000A81DDA /* Info.plist */,
 				A804BC7C22C1705F00A81DDA /* BikeAvailabilityApp.xcdatamodeld */,
-				A830F06822C1B40A00A19A8D /* Station.swift */,
 				A803D65A22C2B2150062C65A /* HttpClient.swift */,
 				A8F9DF8F22C3D87800E974EA /* StationsTableViewHandler.swift */,
 				A8FDC5CC22C67BF700AA5D0A /* StationJsonModel.swift */,
@@ -285,7 +280,6 @@
 				A804BC7E22C1705F00A81DDA /* BikeAvailabilityApp.xcdatamodeld in Sources */,
 				A804BC7822C1705F00A81DDA /* ViewController.swift in Sources */,
 				A803D69C22C307CE0062C65A /* AppDelegate.swift in Sources */,
-				A830F06922C1B40A00A19A8D /* Station.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +291,6 @@
 				A803D69D22C307CE0062C65A /* AppDelegate.swift in Sources */,
 				A804BC8E22C1706000A81DDA /* BikeAvailabilityAppTests.swift in Sources */,
 				A803D65C22C2B2160062C65A /* HttpClient.swift in Sources */,
-				A830F06A22C1B40A00A19A8D /* Station.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +302,6 @@
 				A803D69E22C307CE0062C65A /* AppDelegate.swift in Sources */,
 				A804BC9922C1706000A81DDA /* BikeAvailabilityAppUITests.swift in Sources */,
 				A803D65D22C2B2160062C65A /* HttpClient.swift in Sources */,
-				A830F06B22C1B40A00A19A8D /* Station.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

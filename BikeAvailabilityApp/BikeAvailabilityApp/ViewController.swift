@@ -19,7 +19,14 @@ class ViewController: UIViewController,StationDataProtocol{
         self.tableView.dataSource = sth
         self.tableView.delegate = sth
         self.showTableViewData()
-        //tableView.register(UITableViewCell.self, forCellReuseIdentifier: "LabelCell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = "Stations"
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.title = ""
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

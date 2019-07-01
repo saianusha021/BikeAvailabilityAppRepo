@@ -83,10 +83,10 @@
             </objects>
             <point key="canvasLocation" x="-57.971014492753625" y="-138.61607142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--Station Detail View Controller-->
         <scene sceneID="LJH-h3-nbr">
             <objects>
-                <viewController id="c7Q-d7-wnq" sceneMemberID="viewController">
+                <viewController id="c7Q-d7-wnq" customClass="StationDetailViewController" customModule="BikeAvailabilityApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cY8-tx-KzU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

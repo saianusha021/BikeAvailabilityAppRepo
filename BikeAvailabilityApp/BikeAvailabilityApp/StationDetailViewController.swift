@@ -10,6 +10,9 @@ import UIKit
 
 class StationDetailViewController: UIViewController {
 
+    var stationObj:Station?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

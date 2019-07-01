@@ -22,6 +22,12 @@ class ViewController: UIViewController,StationDataProtocol{
         //tableView.register(UITableViewCell.self, forCellReuseIdentifier: "LabelCell")
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var stationDetailVC = segue.destination as! StationDetailViewController
+        var selectedCellRow:Int = self.tableView.indexPathForSelectedRow!.row
+        stationDetailVC.stationObj = sth.arrOfStations[selectedCellRow]
+        
+    }
 
     func updateStationData(arrayOfStationData:[Station]) {
         sth.arrOfStations = arrayOfStationData
@@ -36,6 +42,6 @@ class ViewController: UIViewController,StationDataProtocol{
         let hc = HttpClient(delegate:self)
         hc.getStationData()
     }
-
+   
 }
 

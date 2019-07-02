@@ -15,6 +15,7 @@ class ViewController: UIViewController,StationDataProtocol{
     var stationTVHandler:StationsTableViewHandler = StationsTableViewHandler()
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.tableView.dataSource = stationTVHandler
         self.tableView.delegate = stationTVHandler

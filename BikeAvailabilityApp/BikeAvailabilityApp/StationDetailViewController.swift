@@ -12,10 +12,14 @@ class StationDetailViewController: UIViewController {
 
     var stationObj:Station?
     
+    @IBOutlet weak var tableView: UITableView!
+    var stationDetTVHandler = StationDetailTableViewHandler()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(self.stationObj)
+        self.tableView.delegate = stationDetTVHandler
+        self.tableView.dataSource = stationDetTVHandler
+        stationDetTVHandler.stationObj = self.stationObj!
         // Do any additional setup after loading the view.
     }
     

@@ -22,6 +22,12 @@
 		A804BC9922C1706000A81DDA /* BikeAvailabilityAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A804BC9822C1706000A81DDA /* BikeAvailabilityAppUITests.swift */; };
 		A80582E022CA49C700B2D95A /* StationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80582DF22CA49C700B2D95A /* StationTableViewCell.swift */; };
 		A80582E222CA4C8200B2D95A /* StationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80582E122CA4C8200B2D95A /* StationDetailViewController.swift */; };
+		A80582E422CB048200B2D95A /* StationDetailTableViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80582E322CB048200B2D95A /* StationDetailTableViewHandler.swift */; };
+		A80582E522CB048200B2D95A /* StationDetailTableViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80582E322CB048200B2D95A /* StationDetailTableViewHandler.swift */; };
+		A80582E622CB048200B2D95A /* StationDetailTableViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80582E322CB048200B2D95A /* StationDetailTableViewHandler.swift */; };
+		A80582E822CB062B00B2D95A /* StationDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80582E722CB062B00B2D95A /* StationDetailTableViewCell.swift */; };
+		A80582E922CB062B00B2D95A /* StationDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80582E722CB062B00B2D95A /* StationDetailTableViewCell.swift */; };
+		A80582EA22CB062B00B2D95A /* StationDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80582E722CB062B00B2D95A /* StationDetailTableViewCell.swift */; };
 		A8F9DF9022C3D87800E974EA /* StationsTableViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F9DF8F22C3D87800E974EA /* StationsTableViewHandler.swift */; };
 		A8FDC5CD22C67BF700AA5D0A /* StationJsonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FDC5CC22C67BF700AA5D0A /* StationJsonModel.swift */; };
 		A8FDC5CE22C67BF700AA5D0A /* StationJsonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FDC5CC22C67BF700AA5D0A /* StationJsonModel.swift */; };
@@ -63,6 +69,8 @@
 		A804BC9A22C1706000A81DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A80582DF22CA49C700B2D95A /* StationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTableViewCell.swift; sourceTree = "<group>"; };
 		A80582E122CA4C8200B2D95A /* StationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailViewController.swift; sourceTree = "<group>"; };
+		A80582E322CB048200B2D95A /* StationDetailTableViewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailTableViewHandler.swift; sourceTree = "<group>"; };
+		A80582E722CB062B00B2D95A /* StationDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailTableViewCell.swift; sourceTree = "<group>"; };
 		A8F9DF8F22C3D87800E974EA /* StationsTableViewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsTableViewHandler.swift; sourceTree = "<group>"; };
 		A8FDC5CC22C67BF700AA5D0A /* StationJsonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationJsonModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,6 +135,8 @@
 				A803D65A22C2B2150062C65A /* HttpClient.swift */,
 				A8F9DF8F22C3D87800E974EA /* StationsTableViewHandler.swift */,
 				A8FDC5CC22C67BF700AA5D0A /* StationJsonModel.swift */,
+				A80582E322CB048200B2D95A /* StationDetailTableViewHandler.swift */,
+				A80582E722CB062B00B2D95A /* StationDetailTableViewCell.swift */,
 			);
 			path = BikeAvailabilityApp;
 			sourceTree = "<group>";
@@ -280,6 +290,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A80582E822CB062B00B2D95A /* StationDetailTableViewCell.swift in Sources */,
+				A80582E422CB048200B2D95A /* StationDetailTableViewHandler.swift in Sources */,
 				A80582E222CA4C8200B2D95A /* StationDetailViewController.swift in Sources */,
 				A803D65B22C2B2160062C65A /* HttpClient.swift in Sources */,
 				A8F9DF9022C3D87800E974EA /* StationsTableViewHandler.swift in Sources */,
@@ -295,10 +307,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A80582E922CB062B00B2D95A /* StationDetailTableViewCell.swift in Sources */,
 				A8FDC5CE22C67BF700AA5D0A /* StationJsonModel.swift in Sources */,
 				A803D69D22C307CE0062C65A /* AppDelegate.swift in Sources */,
 				A804BC8E22C1706000A81DDA /* BikeAvailabilityAppTests.swift in Sources */,
 				A803D65C22C2B2160062C65A /* HttpClient.swift in Sources */,
+				A80582E522CB048200B2D95A /* StationDetailTableViewHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,10 +320,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A80582EA22CB062B00B2D95A /* StationDetailTableViewCell.swift in Sources */,
 				A8FDC5CF22C67BF700AA5D0A /* StationJsonModel.swift in Sources */,
 				A803D69E22C307CE0062C65A /* AppDelegate.swift in Sources */,
 				A804BC9922C1706000A81DDA /* BikeAvailabilityAppUITests.swift in Sources */,
 				A803D65D22C2B2160062C65A /* HttpClient.swift in Sources */,
+				A80582E622CB048200B2D95A /* StationDetailTableViewHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

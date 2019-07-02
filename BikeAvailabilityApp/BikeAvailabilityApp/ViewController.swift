@@ -12,12 +12,12 @@ import UIKit
 class ViewController: UIViewController,StationDataProtocol{
     
     @IBOutlet weak var tableView: UITableView!
-    var sth:StationsTableViewHandler = StationsTableViewHandler()
+    var stationTVHandler:StationsTableViewHandler = StationsTableViewHandler()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.dataSource = sth
-        self.tableView.delegate = sth
+        self.tableView.dataSource = stationTVHandler
+        self.tableView.delegate = stationTVHandler
         self.showTableViewData()
     }
     
@@ -32,12 +32,12 @@ class ViewController: UIViewController,StationDataProtocol{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var stationDetailVC = segue.destination as! StationDetailViewController
         var selectedCellRow:Int = self.tableView.indexPathForSelectedRow!.row
-        stationDetailVC.stationObj = sth.arrOfStations[selectedCellRow]
+        stationDetailVC.stationObj = stationTVHandler.arrOfStations[selectedCellRow]
         
     }
 
     func updateStationData(arrayOfStationData:[Station]) {
-        sth.arrOfStations = arrayOfStationData
+        stationTVHandler.arrOfStations = arrayOfStationData
         self.tableView.reloadData()
     }
     

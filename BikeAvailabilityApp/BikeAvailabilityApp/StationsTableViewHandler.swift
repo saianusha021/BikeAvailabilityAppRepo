@@ -8,9 +8,6 @@
 
 import UIKit
 
-protocol TableViewReloadProtocol {
-    func reloadTableViewData()
-}
 
 class StationsTableViewHandler: NSObject,UITableViewDataSource,UITableViewDelegate {
     

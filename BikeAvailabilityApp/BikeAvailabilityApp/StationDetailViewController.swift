@@ -13,6 +13,8 @@ class StationDetailViewController: UIViewController {
     var stationObj:Station?
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var infoTextView: UITextView!
+    
     var stationDetTVHandler = StationDetailTableViewHandler()
     
     override func viewDidLoad() {

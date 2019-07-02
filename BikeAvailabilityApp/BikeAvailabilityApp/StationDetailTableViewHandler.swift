@@ -25,13 +25,13 @@ class StationDetailTableViewHandler: NSObject,UITableViewDelegate,UITableViewDat
         var cell = tableView.dequeueReusableCell(withIdentifier: "StationDetailCell", for: indexPath) as! StationDetailTableViewCell
         switch indexPath.row {
         case 0:
-            cell.setLabels(fieldName: "StationName", fieldValue: stationObj.stationName!)
+            cell.setLabels(fieldName: "Station", fieldValue: stationObj.stationName!)
         case 1:
             cell.setLabels(fieldName: "Docks", fieldValue:"\(stationObj.availableDocks!)/\(stationObj.totalDocks!)")
         case 2:
             cell.setLabels(fieldName: "Bikes Available", fieldValue: String(stationObj.availableBikes!))
         default:
-            cell.setLabels(fieldName: "Adress", fieldValue:"\(stationObj.stAddress1!)\(stationObj.stAddress2!)")
+            cell.setLabels(fieldName: "Time to go", fieldValue:"15mins from your location")
         }
         return cell
     }

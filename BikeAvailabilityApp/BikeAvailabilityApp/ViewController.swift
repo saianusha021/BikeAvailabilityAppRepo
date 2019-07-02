@@ -31,8 +31,8 @@ class ViewController: UIViewController,StationDataProtocol{
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var stationDetailVC = segue.destination as! StationDetailViewController
-        var selectedCellRow:Int = self.tableView.indexPathForSelectedRow!.row
+        let stationDetailVC = segue.destination as! StationDetailViewController
+        let selectedCellRow:Int = self.tableView.indexPathForSelectedRow!.row
         stationDetailVC.stationObj = stationTVHandler.arrOfStations[selectedCellRow]
         
     }

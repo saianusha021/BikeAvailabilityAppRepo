@@ -30,7 +30,7 @@ class HttpClient: NSObject {
 //        session = URLSession.shared
 //        url = URL(string: "https://feeds.citibikenyc.com/stations/stations.json")!
         
-        var arrOfStations = [Station]()
+    //    let arrOfStations = [Station]()
         
         let task = session.dataTask(with: url) { data, response, error in
             

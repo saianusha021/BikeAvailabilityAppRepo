@@ -8,9 +8,6 @@
 
 import UIKit
 
-protocol TableViewReloadProtocol {
-    func reloadTableViewData()
-}
 
 class StationsTableViewHandler: NSObject,UITableViewDataSource,UITableViewDelegate {
     
@@ -30,11 +27,10 @@ class StationsTableViewHandler: NSObject,UITableViewDataSource,UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StationCell", for: indexPath) as! StationTableViewCell
         let s:Station = arrOfStations[indexPath.row]
-        print(s.stationName)
-        cell.textLabel?.text = "\(s.stationName)!            \(String(describing: s.availableBikes!))"
-        
+        cell.stationNameLabel.text = s.stationName!
+        cell.numOfBikesLabel.text  = String(s.availableBikes!)
         return cell
     }
     

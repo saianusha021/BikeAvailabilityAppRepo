@@ -12,19 +12,33 @@ import UIKit
 class ViewController: UIViewController,StationDataProtocol{
     
     @IBOutlet weak var tableView: UITableView!
-    var sth:StationsTableViewHandler = StationsTableViewHandler()
+    var stationTVHandler:StationsTableViewHandler = StationsTableViewHandler()
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        self.tableView.dataSource = sth
-        self.tableView.delegate = sth
+        self.tableView.dataSource = stationTVHandler
+        self.tableView.delegate = stationTVHandler
         self.showTableViewData()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "LabelCell")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = "Stations"
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.title = ""
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let stationDetailVC = segue.destination as! StationDetailViewController
+        let selectedCellRow:Int = self.tableView.indexPathForSelectedRow!.row
+        stationDetailVC.stationObj = stationTVHandler.arrOfStations[selectedCellRow]
+        
+    }
 
     func updateStationData(arrayOfStationData:[Station]) {
-        sth.arrOfStations = arrayOfStationData
+        stationTVHandler.arrOfStations = arrayOfStationData
         self.tableView.reloadData()
     }
     
@@ -36,6 +50,6 @@ class ViewController: UIViewController,StationDataProtocol{
         let hc = HttpClient(delegate:self)
         hc.getStationData()
     }
-
+   
 }
 

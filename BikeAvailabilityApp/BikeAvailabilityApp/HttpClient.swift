@@ -35,16 +35,19 @@ class HttpClient: NSObject {
         let task = session.dataTask(with: url) { data, response, error in
             
             if error != nil || data == nil {
+                // very good: every return calls a delegate method. many folks forget to do this
                 self.delegate.errorWithMessage(msg: "Client error!")
                 return
             }
             
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+                // very good: every return calls a delegate method. many folks forget to do this
                 self.delegate.errorWithMessage(msg: "Server error!")
                 return
             }
             
             guard let mime = response.mimeType, mime == "application/json" else {
+                // very good: every return calls a delegate method. many folks forget to do this
                 self.delegate.errorWithMessage(msg: "Wrong MIME type!")
                 return
             }
@@ -58,6 +61,7 @@ class HttpClient: NSObject {
                     self.delegate.updateStationData(arrayOfStationData: jsonDataObj.stationBeanList!)
                 }
             } catch {
+                // very good: every return calls a delegate method. many folks forget to do this
                 self.delegate.errorWithMessage(msg: "JSON error: \(error.localizedDescription)")
                 return
             }

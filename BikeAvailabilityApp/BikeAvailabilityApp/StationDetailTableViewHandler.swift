@@ -13,6 +13,11 @@ class StationDetailTableViewHandler: NSObject,UITableViewDelegate,UITableViewDat
     var stationObj:Station = Station()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+        // if you make `stationName` non-optional, then the parsing will fail if `stationName` is not provided. maybe this something you want.
+
+        // also look at the concept of "failable initializers" in swift. not for decodables, but just for
+        // general knowledge
         if stationObj.stationName != nil {
          return 4
         }

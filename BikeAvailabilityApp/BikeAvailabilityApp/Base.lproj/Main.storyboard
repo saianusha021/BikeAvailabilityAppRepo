@@ -19,12 +19,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="6Ea-ay-Emu"/>
+                        <segue destination="iRH-7N-vtj" kind="relationship" relationship="rootViewController" id="nXM-uI-ecW"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lZI-L7-wOW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1212" y="-138"/>
+            <point key="canvasLocation" x="-2925" y="-120"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -81,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-57.971014492753625" y="-138.61607142857142"/>
+            <point key="canvasLocation" x="-370" y="-83"/>
         </scene>
         <!--Station Detail View Controller-->
         <scene sceneID="LJH-h3-nbr">
@@ -92,7 +92,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fAB-7d-thd">
-                                <rect key="frame" x="0.0" y="108" width="414" height="176"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="176"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="176" id="AWA-bl-On4"/>
@@ -131,7 +131,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSf-uC-Czz">
-                                <rect key="frame" x="87" y="384" width="68" height="41"/>
+                                <rect key="frame" x="87" y="340" width="68" height="41"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="68" id="PBS-YL-laR"/>
@@ -143,7 +143,7 @@
                                 <state key="normal" title="GO"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRZ-2I-kkb">
-                                <rect key="frame" x="252" y="384" width="65" height="41"/>
+                                <rect key="frame" x="252" y="340" width="65" height="41"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="St4-rY-5dh"/>
@@ -178,7 +178,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KlW-nQ-ND7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="828.98550724637687" y="-139.28571428571428"/>
+            <point key="canvasLocation" x="578" y="-83"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tnK-l0-3SL">
+            <objects>
+                <viewController id="iRH-7N-vtj" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QHW-lI-qzC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="GeJ-Zu-Fst"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="EB0-jX-7sL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bIC-dU-4Ut" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1457" y="-68"/>
         </scene>
     </scenes>
 </document>

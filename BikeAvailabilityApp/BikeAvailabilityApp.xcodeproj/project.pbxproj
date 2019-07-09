@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3380A041DA4AF52C6875D171 /* Pods_BikeAvailabilityAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8116D5905E0512A949EEC95D /* Pods_BikeAvailabilityAppUITests.framework */; };
+		A2CAA6CA3985DB2D61C0259E /* Pods_BikeAvailabilityApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BCF3BF8197DD1AF51F67A4D /* Pods_BikeAvailabilityApp.framework */; };
 		A803D65B22C2B2160062C65A /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A803D65A22C2B2150062C65A /* HttpClient.swift */; };
 		A803D65C22C2B2160062C65A /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A803D65A22C2B2150062C65A /* HttpClient.swift */; };
 		A803D65D22C2B2160062C65A /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A803D65A22C2B2150062C65A /* HttpClient.swift */; };
@@ -28,10 +30,14 @@
 		A80582E822CB062B00B2D95A /* StationDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80582E722CB062B00B2D95A /* StationDetailTableViewCell.swift */; };
 		A80582E922CB062B00B2D95A /* StationDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80582E722CB062B00B2D95A /* StationDetailTableViewCell.swift */; };
 		A80582EA22CB062B00B2D95A /* StationDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80582E722CB062B00B2D95A /* StationDetailTableViewCell.swift */; };
+		A8D01D9822CF99F800780B4D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D01D9722CF99F800780B4D /* LoginViewController.swift */; };
+		A8D01D9922CF99F800780B4D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D01D9722CF99F800780B4D /* LoginViewController.swift */; };
+		A8D01D9A22CF99F800780B4D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D01D9722CF99F800780B4D /* LoginViewController.swift */; };
 		A8F9DF9022C3D87800E974EA /* StationsTableViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F9DF8F22C3D87800E974EA /* StationsTableViewHandler.swift */; };
 		A8FDC5CD22C67BF700AA5D0A /* StationJsonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FDC5CC22C67BF700AA5D0A /* StationJsonModel.swift */; };
 		A8FDC5CE22C67BF700AA5D0A /* StationJsonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FDC5CC22C67BF700AA5D0A /* StationJsonModel.swift */; };
 		A8FDC5CF22C67BF700AA5D0A /* StationJsonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FDC5CC22C67BF700AA5D0A /* StationJsonModel.swift */; };
+		E0A0C87C3F150752FBD0AA1E /* Pods_BikeAvailabilityAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96881746A808D995D981830 /* Pods_BikeAvailabilityAppTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +58,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1BCF3BF8197DD1AF51F67A4D /* Pods_BikeAvailabilityApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BikeAvailabilityApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25BDF7765AC8B6C37C836519 /* Pods-BikeAvailabilityApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeAvailabilityApp.release.xcconfig"; path = "Target Support Files/Pods-BikeAvailabilityApp/Pods-BikeAvailabilityApp.release.xcconfig"; sourceTree = "<group>"; };
+		3E179901E7DDC298A9243583 /* Pods-BikeAvailabilityAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeAvailabilityAppTests.debug.xcconfig"; path = "Target Support Files/Pods-BikeAvailabilityAppTests/Pods-BikeAvailabilityAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5B3D17D63217618E1EA11BE6 /* Pods-BikeAvailabilityAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeAvailabilityAppUITests.release.xcconfig"; path = "Target Support Files/Pods-BikeAvailabilityAppUITests/Pods-BikeAvailabilityAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8116D5905E0512A949EEC95D /* Pods_BikeAvailabilityAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BikeAvailabilityAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		837A5EADC57D3CC05AD2AEFE /* Pods-BikeAvailabilityAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeAvailabilityAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-BikeAvailabilityAppUITests/Pods-BikeAvailabilityAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8AF5F6EED47FE4ACCAC1C5FC /* Pods-BikeAvailabilityAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeAvailabilityAppTests.release.xcconfig"; path = "Target Support Files/Pods-BikeAvailabilityAppTests/Pods-BikeAvailabilityAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		A5631847E9E2738ACC115674 /* Pods-BikeAvailabilityApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeAvailabilityApp.debug.xcconfig"; path = "Target Support Files/Pods-BikeAvailabilityApp/Pods-BikeAvailabilityApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A803D65A22C2B2150062C65A /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		A803D69B22C307CE0062C65A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A804BC7222C1705F00A81DDA /* BikeAvailabilityApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeAvailabilityApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,8 +85,10 @@
 		A80582E122CA4C8200B2D95A /* StationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailViewController.swift; sourceTree = "<group>"; };
 		A80582E322CB048200B2D95A /* StationDetailTableViewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailTableViewHandler.swift; sourceTree = "<group>"; };
 		A80582E722CB062B00B2D95A /* StationDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailTableViewCell.swift; sourceTree = "<group>"; };
+		A8D01D9722CF99F800780B4D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A8F9DF8F22C3D87800E974EA /* StationsTableViewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsTableViewHandler.swift; sourceTree = "<group>"; };
 		A8FDC5CC22C67BF700AA5D0A /* StationJsonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationJsonModel.swift; sourceTree = "<group>"; };
+		D96881746A808D995D981830 /* Pods_BikeAvailabilityAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BikeAvailabilityAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2CAA6CA3985DB2D61C0259E /* Pods_BikeAvailabilityApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0A0C87C3F150752FBD0AA1E /* Pods_BikeAvailabilityAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,12 +112,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3380A041DA4AF52C6875D171 /* Pods_BikeAvailabilityAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23DEA1380CE256D949C580CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1BCF3BF8197DD1AF51F67A4D /* Pods_BikeAvailabilityApp.framework */,
+				D96881746A808D995D981830 /* Pods_BikeAvailabilityAppTests.framework */,
+				8116D5905E0512A949EEC95D /* Pods_BikeAvailabilityAppUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A804BC6922C1705F00A81DDA = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +136,8 @@
 				A804BC8C22C1706000A81DDA /* BikeAvailabilityAppTests */,
 				A804BC9722C1706000A81DDA /* BikeAvailabilityAppUITests */,
 				A804BC7322C1705F00A81DDA /* Products */,
+				B47B5141151C924ACC7B045A /* Pods */,
+				23DEA1380CE256D949C580CF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,18 +155,19 @@
 			isa = PBXGroup;
 			children = (
 				A803D69B22C307CE0062C65A /* AppDelegate.swift */,
+				A8D01D9722CF99F800780B4D /* LoginViewController.swift */,
 				A804BC7722C1705F00A81DDA /* ViewController.swift */,
+				A80582E122CA4C8200B2D95A /* StationDetailViewController.swift */,
 				A80582DF22CA49C700B2D95A /* StationTableViewCell.swift */,
 				A804BC7922C1705F00A81DDA /* Main.storyboard */,
-				A80582E122CA4C8200B2D95A /* StationDetailViewController.swift */,
 				A804BC7F22C1706000A81DDA /* Assets.xcassets */,
 				A804BC8122C1706000A81DDA /* LaunchScreen.storyboard */,
 				A804BC8422C1706000A81DDA /* Info.plist */,
 				A804BC7C22C1705F00A81DDA /* BikeAvailabilityApp.xcdatamodeld */,
 				A803D65A22C2B2150062C65A /* HttpClient.swift */,
 				A8F9DF8F22C3D87800E974EA /* StationsTableViewHandler.swift */,
-				A8FDC5CC22C67BF700AA5D0A /* StationJsonModel.swift */,
 				A80582E322CB048200B2D95A /* StationDetailTableViewHandler.swift */,
+				A8FDC5CC22C67BF700AA5D0A /* StationJsonModel.swift */,
 				A80582E722CB062B00B2D95A /* StationDetailTableViewCell.swift */,
 			);
 			path = BikeAvailabilityApp;
@@ -159,6 +191,19 @@
 			path = BikeAvailabilityAppUITests;
 			sourceTree = "<group>";
 		};
+		B47B5141151C924ACC7B045A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A5631847E9E2738ACC115674 /* Pods-BikeAvailabilityApp.debug.xcconfig */,
+				25BDF7765AC8B6C37C836519 /* Pods-BikeAvailabilityApp.release.xcconfig */,
+				3E179901E7DDC298A9243583 /* Pods-BikeAvailabilityAppTests.debug.xcconfig */,
+				8AF5F6EED47FE4ACCAC1C5FC /* Pods-BikeAvailabilityAppTests.release.xcconfig */,
+				837A5EADC57D3CC05AD2AEFE /* Pods-BikeAvailabilityAppUITests.debug.xcconfig */,
+				5B3D17D63217618E1EA11BE6 /* Pods-BikeAvailabilityAppUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -166,9 +211,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A804BC9D22C1706000A81DDA /* Build configuration list for PBXNativeTarget "BikeAvailabilityApp" */;
 			buildPhases = (
+				B23D4C5EEF7534D4E2D482E5 /* [CP] Check Pods Manifest.lock */,
 				A804BC6E22C1705F00A81DDA /* Sources */,
 				A804BC6F22C1705F00A81DDA /* Frameworks */,
 				A804BC7022C1705F00A81DDA /* Resources */,
+				6DB8CA0B2F42D478B32EE4A7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -183,6 +230,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A804BCA022C1706000A81DDA /* Build configuration list for PBXNativeTarget "BikeAvailabilityAppTests" */;
 			buildPhases = (
+				042BE66DF9ED1F0A86948469 /* [CP] Check Pods Manifest.lock */,
 				A804BC8522C1706000A81DDA /* Sources */,
 				A804BC8622C1706000A81DDA /* Frameworks */,
 				A804BC8722C1706000A81DDA /* Resources */,
@@ -201,6 +249,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A804BCA322C1706000A81DDA /* Build configuration list for PBXNativeTarget "BikeAvailabilityAppUITests" */;
 			buildPhases = (
+				03F558B035A17152E772F913 /* [CP] Check Pods Manifest.lock */,
 				A804BC9022C1706000A81DDA /* Sources */,
 				A804BC9122C1706000A81DDA /* Frameworks */,
 				A804BC9222C1706000A81DDA /* Resources */,
@@ -285,6 +334,92 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		03F558B035A17152E772F913 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BikeAvailabilityAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		042BE66DF9ED1F0A86948469 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BikeAvailabilityAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DB8CA0B2F42D478B32EE4A7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BikeAvailabilityApp/Pods-BikeAvailabilityApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BikeAvailabilityApp/Pods-BikeAvailabilityApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BikeAvailabilityApp/Pods-BikeAvailabilityApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B23D4C5EEF7534D4E2D482E5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BikeAvailabilityApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A804BC6E22C1705F00A81DDA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -300,6 +435,7 @@
 				A804BC7E22C1705F00A81DDA /* BikeAvailabilityApp.xcdatamodeld in Sources */,
 				A804BC7822C1705F00A81DDA /* ViewController.swift in Sources */,
 				A803D69C22C307CE0062C65A /* AppDelegate.swift in Sources */,
+				A8D01D9822CF99F800780B4D /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +443,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8D01D9922CF99F800780B4D /* LoginViewController.swift in Sources */,
 				A80582E922CB062B00B2D95A /* StationDetailTableViewCell.swift in Sources */,
 				A8FDC5CE22C67BF700AA5D0A /* StationJsonModel.swift in Sources */,
 				A803D69D22C307CE0062C65A /* AppDelegate.swift in Sources */,
@@ -320,6 +457,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8D01D9A22CF99F800780B4D /* LoginViewController.swift in Sources */,
 				A80582EA22CB062B00B2D95A /* StationDetailTableViewCell.swift in Sources */,
 				A8FDC5CF22C67BF700AA5D0A /* StationJsonModel.swift in Sources */,
 				A803D69E22C307CE0062C65A /* AppDelegate.swift in Sources */,
@@ -482,9 +620,11 @@
 		};
 		A804BC9E22C1706000A81DDA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5631847E9E2738ACC115674 /* Pods-BikeAvailabilityApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JLPN5KACM5;
 				INFOPLIST_FILE = BikeAvailabilityApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -499,9 +639,11 @@
 		};
 		A804BC9F22C1706000A81DDA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25BDF7765AC8B6C37C836519 /* Pods-BikeAvailabilityApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JLPN5KACM5;
 				INFOPLIST_FILE = BikeAvailabilityApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -516,6 +658,7 @@
 		};
 		A804BCA122C1706000A81DDA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E179901E7DDC298A9243583 /* Pods-BikeAvailabilityAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -536,6 +679,7 @@
 		};
 		A804BCA222C1706000A81DDA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AF5F6EED47FE4ACCAC1C5FC /* Pods-BikeAvailabilityAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -556,6 +700,7 @@
 		};
 		A804BCA422C1706000A81DDA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 837A5EADC57D3CC05AD2AEFE /* Pods-BikeAvailabilityAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -575,6 +720,7 @@
 		};
 		A804BCA522C1706000A81DDA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B3D17D63217618E1EA11BE6 /* Pods-BikeAvailabilityAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

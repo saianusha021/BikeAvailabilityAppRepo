@@ -12,17 +12,12 @@ import UIKit
 class StationsTableViewHandler: NSObject,UITableViewDataSource,UITableViewDelegate {
     
     var arrOfStations:[Station]
-    //var delegate:TableViewReloadProtocol
     
     override init() {
-        //self.delegate = delegate
         arrOfStations = [Station]()
     }
-    
-    
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("count---\(arrOfStations.count)")
         return arrOfStations.count
     }
     
@@ -33,11 +28,10 @@ class StationsTableViewHandler: NSObject,UITableViewDataSource,UITableViewDelega
         cell.numOfBikesLabel.text  = String(s.availableBikes!)
         return cell
     }
-    
-    
+    func updateStationData(stations:[Station]) {
+        if arrOfStations.count == 0 {
+            arrOfStations = stations
+        }
+    }
 
-//    init(tableView:UITableView) {
-//        self.tableView =  tableView
-//    }
-    
 }

@@ -13,11 +13,11 @@ class StationDetailTableViewHandler: NSObject,UITableViewDelegate,UITableViewDat
     var stationObj:Station = Station()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if stationObj.stationName != nil {
-         return 4
+        if stationObj.stationName!.isEmpty {
+         return 0
         }
         else {
-         return 0
+         return 4
         }
     }
     

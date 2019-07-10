@@ -13,13 +13,15 @@ class ViewController: UIViewController,StationDataProtocol{
     
     @IBOutlet weak var tableView: UITableView!
     var stationTVHandler:StationsTableViewHandler = StationsTableViewHandler()
+    var httpclientObj:HttpClient?
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         self.tableView.dataSource = stationTVHandler
         self.tableView.delegate = stationTVHandler
-        self.showTableViewData()
+        httpclientObj = HttpClient(delegate:self)
+        httpclientObj!.getStationData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,22 +36,17 @@ class ViewController: UIViewController,StationDataProtocol{
         let stationDetailVC = segue.destination as! StationDetailViewController
         let selectedCellRow:Int = self.tableView.indexPathForSelectedRow!.row
         stationDetailVC.stationObj = stationTVHandler.arrOfStations[selectedCellRow]
-        
     }
 
     func updateStationData(arrayOfStationData:[Station]) {
-        stationTVHandler.arrOfStations = arrayOfStationData
+        stationTVHandler.updateStationData(stations: arrayOfStationData)
         self.tableView.reloadData()
     }
     
     func errorWithMessage(msg:String) {
         print(msg)
     }
-    
-    func showTableViewData() {
-        let hc = HttpClient(delegate:self)
-        hc.getStationData()
-    }
+
    
 }
 

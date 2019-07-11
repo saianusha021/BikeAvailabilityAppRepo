@@ -16,7 +16,6 @@ class ViewController: UIViewController,StationDataProtocol{
     var httpclientObj:HttpClient?
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         self.tableView.dataSource = stationTVHandler
         self.tableView.delegate = stationTVHandler
@@ -47,6 +46,5 @@ class ViewController: UIViewController,StationDataProtocol{
         print(msg)
     }
 
-   
 }
 

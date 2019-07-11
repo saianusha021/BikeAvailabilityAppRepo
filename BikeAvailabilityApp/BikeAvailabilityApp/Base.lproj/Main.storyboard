@@ -180,10 +180,10 @@
             </objects>
             <point key="canvasLocation" x="578" y="-83"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tnK-l0-3SL">
             <objects>
-                <viewController id="iRH-7N-vtj" sceneMemberID="viewController">
+                <viewController id="iRH-7N-vtj" customClass="LoginViewController" customModule="BikeAvailabilityApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QHW-lI-qzC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

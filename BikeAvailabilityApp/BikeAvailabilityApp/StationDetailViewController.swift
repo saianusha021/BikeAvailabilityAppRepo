@@ -7,16 +7,46 @@
 //
 
 import UIKit
+import MapKit
+import FacebookShare
+import FBSDKShareKit
 
 class StationDetailViewController: UIViewController {
 
     var stationObj:Station?
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var infoTextView: UITextView!
-    
     var stationDetTVHandler = StationDetailTableViewHandler()
     
+    
+    
+    
+    @IBAction func goButtonTapped(_ sender: Any) {
+            
+        let latitude: CLLocationDegrees = stationObj?.latitude! ?? 0.0
+            let longitude: CLLocationDegrees = stationObj?.longitude! ?? 0.0
+            
+            let regionDistance:CLLocationDistance = 10000
+            let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
+        let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+            let options = [
+                MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+                MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+            ]
+            let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+            let mapItem = MKMapItem(placemark: placemark)
+            mapItem.name = stationObj?.stationName!
+            mapItem.openInMaps(launchOptions: options)
+        
+    }
+    
+    @IBAction func shareButtonTapped(_ sender: Any) {
+        
+        let content = ShareLinkContent.init()
+        content.contentURL = URL(string: "https://developers.facebook.com")!
+       
+    }
+   
     override func viewDidLoad() {
         super.viewDidLoad()
        self.addLogoutButton()

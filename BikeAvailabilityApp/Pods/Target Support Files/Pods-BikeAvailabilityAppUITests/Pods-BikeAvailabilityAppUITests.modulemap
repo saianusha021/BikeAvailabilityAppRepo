@@ -1,0 +1,6 @@
+framework module Pods_BikeAvailabilityAppUITests {
+  umbrella header "Pods-BikeAvailabilityAppUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

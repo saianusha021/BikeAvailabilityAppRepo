@@ -7,25 +7,28 @@
 //
 
 import UIKit
+import FacebookLogin
 import FBSDKLoginKit
-import FBSDKCoreKit
 
-class LoginViewController: UIViewController {
-
+class LoginViewController: UIViewController,
+LoginButtonDelegate{
+    let fbLoginHandler = FacebookLoginHandler()
+    
     override func viewDidLoad() {
-        let loginButton = FBLoginButton(permissions: [ .publicProfile ])
-        loginButton.center = view.center
-        view.addSubview(loginButton)
+    
+        let fbLoginButton = FBLoginButton()
+        fbLoginButton.center = view.center
+        view.addSubview(fbLoginButton)
+        fbLoginButton.delegate = self
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+        loginButton.isHidden = true
+        if ((result?.token) != nil) {
+           self.dismiss(animated: false, completion: nil)
+        }
     }
-    */
-
+    
+    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+    }
 }

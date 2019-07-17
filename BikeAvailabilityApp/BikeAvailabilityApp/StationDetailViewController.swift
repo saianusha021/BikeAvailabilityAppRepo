@@ -19,6 +19,7 @@ class StationDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       self.addLogoutButton()
         self.tableView.delegate = stationDetTVHandler
         self.tableView.dataSource = stationDetTVHandler
         stationDetTVHandler.stationObj = self.stationObj!
@@ -28,6 +29,18 @@ class StationDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.title = "Station"
     }
+    
+    func addLogoutButton() {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "LogOut", style: .done, target: self, action: #selector(logOutButtonTapped))
+    }
+    
+    @objc func logOutButtonTapped() {
+        
+    }
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 

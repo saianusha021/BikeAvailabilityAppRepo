@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FacebookLogin
+import FBSDKLoginKit
 
 
 class ViewController: UIViewController,StationDataProtocol{
@@ -17,11 +19,41 @@ class ViewController: UIViewController,StationDataProtocol{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if(userIsLoggedInWithFB()) {
+            self.addLogoutButton()
+            self.initialSetUp()
+        }
+        
+        else {
+            self.showLogInViewController()
+        }
+        
+    }
+    
+    func initialSetUp() {
         self.tableView.dataSource = stationTVHandler
         self.tableView.delegate = stationTVHandler
         httpclientObj = HttpClient(delegate:self)
         httpclientObj!.getStationData()
     }
+    func showLogInViewController() {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
+        self.navigationController!.present(vc, animated:false, completion: nil)
+    }
+    func addLogoutButton() {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(logOutButtonTapped))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "LogOut", style: .done, target: self, action: #selector(logOutButtonTapped))
+    }
+    
+    @objc func logOutButtonTapped() {
+        let loginManager = LoginManager()
+       loginManager.logOut()
+        self.showLogInViewController()
+    }
+    func userIsLoggedInWithFB()->Bool {
+        return AccessToken.current != nil
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         self.title = "Stations"

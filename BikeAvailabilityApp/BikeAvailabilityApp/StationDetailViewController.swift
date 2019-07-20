@@ -18,9 +18,7 @@ class StationDetailViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var stationDetTVHandler = StationDetailTableViewHandler()
     
-    
-    
-    
+    @IBOutlet weak var goButton: UIButton!
     @IBAction func goButtonTapped(_ sender: Any) {
             
         let latitude: CLLocationDegrees = stationObj?.latitude! ?? 0.0
@@ -44,12 +42,13 @@ class StationDetailViewController: UIViewController {
         
         let content = ShareLinkContent.init()
         content.contentURL = URL(string: "https://developers.facebook.com")!
-       
+        
     }
    
     override func viewDidLoad() {
         super.viewDidLoad()
        self.addLogoutButton()
+        self.addShareButton()
         self.tableView.delegate = stationDetTVHandler
         self.tableView.dataSource = stationDetTVHandler
         stationDetTVHandler.stationObj = self.stationObj!
@@ -62,6 +61,29 @@ class StationDetailViewController: UIViewController {
     
     func addLogoutButton() {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "LogOut", style: .done, target: self, action: #selector(logOutButtonTapped))
+    }
+    func addShareButton() {
+        let fbShareButton = FBShareButton()
+        //fbShareButton.center = view.center
+        let content = ShareLinkContent()
+        content.contentURL = URL(string: "https://developers.facebook.com")!
+        fbShareButton.shareContent = content
+        view.addSubview(fbShareButton)
+        
+        fbShareButton.translatesAutoresizingMaskIntoConstraints = false
+        let constX:NSLayoutConstraint = NSLayoutConstraint(item: fbShareButton, attribute: NSLayoutConstraint.Attribute.leading, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.goButton, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1, constant: self.goButton.frame.width+75);
+        self.view.addConstraint(constX);
+        
+        let constY:NSLayoutConstraint = NSLayoutConstraint(item: fbShareButton, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.goButton, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1, constant:0);
+        self.view.addConstraint(constY);
+        print(fbShareButton.frame)
+        
+        
+//        let constW:NSLayoutConstraint = NSLayoutConstraint(item: fbShareButton, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.width, multiplier: 1, constant: 0);
+//        self.view.addConstraint(constW);
+//
+//        let constH:NSLayoutConstraint = NSLayoutConstraint(item: fbShareButton, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.height, multiplier: 1, constant: 0);
+//        self.view.addConstraint(constH);
     }
     
     @objc func logOutButtonTapped() {

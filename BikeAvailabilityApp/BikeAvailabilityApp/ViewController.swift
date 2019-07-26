@@ -51,12 +51,12 @@ class ViewController: UIViewController,DataHandlerProtocol,UIPopoverControllerDe
     }
     
     @objc func profilePictureTapped() {
-    var popoverViewController = self.storyboard!.instantiateViewController(withIdentifier: "PopOverVC")
-        var nav = UINavigationController(rootViewController: popoverViewController)
-        var popover:UIPopoverController = UIPopoverController(contentViewController: nav)
-        popover.setContentSize(CGSize(width:550, height:600), animated: true)
-        popover.delegate = self
-        popover.present(from: self.navigationItem.rightBarButtonItem!, permittedArrowDirections: UIPopoverArrowDirection.any, animated: true)
+    var popoverContent = self.storyboard!.instantiateViewController(withIdentifier: "PopOverVC")
+       popoverContent.modalPresentationStyle = .popover
+        popoverContent.isModalInPopover = true
+        popoverContent.preferredContentSize = CGSize(width:100,height: 100)
+        self.present(popoverContent, animated: true, completion: nil)
+        
     }
     @objc func logOutButtonTapped() {
         let loginManager = LoginManager()

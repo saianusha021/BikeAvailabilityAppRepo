@@ -11,7 +11,7 @@ import FacebookLogin
 import FBSDKLoginKit
 
 
-class ViewController: UIViewController,DataHandlerProtocol{
+class ViewController: UIViewController,DataHandlerProtocol,UIPopoverControllerDelegate{
     
     @IBOutlet weak var tableView: UITableView!
     var stationTVHandler:StationsTableViewHandler = StationsTableViewHandler()
@@ -54,9 +54,9 @@ class ViewController: UIViewController,DataHandlerProtocol{
     var popoverViewController = self.storyboard!.instantiateViewController(withIdentifier: "PopOverVC")
         var nav = UINavigationController(rootViewController: popoverViewController)
         var popover:UIPopoverController = UIPopoverController(contentViewController: nav)
-        popover.setContentSize(CGSizeMake(550, 600), animated: true)
+        popover.setContentSize(CGSize(width:550, height:600), animated: true)
         popover.delegate = self
-        popover.presentPopoverFromBarButtonItem(self.navigationItem.rightBarButtonItem, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
+        popover.present(from: self.navigationItem.rightBarButtonItem!, permittedArrowDirections: UIPopoverArrowDirection.any, animated: true)
     }
     @objc func logOutButtonTapped() {
         let loginManager = LoginManager()

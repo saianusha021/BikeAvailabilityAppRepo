@@ -17,6 +17,7 @@ LoginButtonDelegate{
     override func viewDidLoad() {
     
         let fbLoginButton = FBLoginButton()
+        fbLoginButton.permissions = ["public_profile", "email", "user_friends"]
         fbLoginButton.center = view.center
         view.addSubview(fbLoginButton)
         fbLoginButton.delegate = self
@@ -31,4 +32,7 @@ LoginButtonDelegate{
     
     func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
     }
+    
+   
 }
+

@@ -11,16 +11,18 @@ import FacebookLogin
 import FBSDKLoginKit
 
 
-class ViewController: UIViewController,StationDataProtocol{
+class ViewController: UIViewController,DataHandlerProtocol{
     
     @IBOutlet weak var tableView: UITableView!
     var stationTVHandler:StationsTableViewHandler = StationsTableViewHandler()
     var httpclientObj:HttpClient?
+    var imageView:UIImageView?
+    var image :UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if(userIsLoggedInWithFB()) {
-            self.addLogoutButton()
+           self.addLogoutButton(image: UIImage())
             self.initialSetUp()
         }
         
@@ -29,22 +31,33 @@ class ViewController: UIViewController,StationDataProtocol{
         }
         
     }
-    
     func initialSetUp() {
         self.tableView.dataSource = stationTVHandler
         self.tableView.delegate = stationTVHandler
         httpclientObj = HttpClient(delegate:self)
         httpclientObj!.getStationData()
+        self.getUserFBData()
     }
     func showLogInViewController() {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
         self.navigationController!.present(vc, animated:false, completion: nil)
     }
-    func addLogoutButton() {
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(logOutButtonTapped))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "LogOut", style: .done, target: self, action: #selector(logOutButtonTapped))
+    func addLogoutButton(image:UIImage) {
+        let profileButton = UIButton(frame: CGRect(x:0, y: 0, width:45, height:45))
+        profileButton.addTarget(self, action: Selector("profilePictureTapped"), for: .touchUpInside)
+        profileButton.setImage(image, for: .normal)
+        let rightButton = UIBarButtonItem(customView: profileButton)
+        self.navigationItem.setRightBarButtonItems([rightButton], animated: true)
     }
     
+    @objc func profilePictureTapped() {
+    var popoverViewController = self.storyboard!.instantiateViewController(withIdentifier: "PopOverVC")
+        var nav = UINavigationController(rootViewController: popoverViewController)
+        var popover:UIPopoverController = UIPopoverController(contentViewController: nav)
+        popover.setContentSize(CGSizeMake(550, 600), animated: true)
+        popover.delegate = self
+        popover.presentPopoverFromBarButtonItem(self.navigationItem.rightBarButtonItem, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
+    }
     @objc func logOutButtonTapped() {
         let loginManager = LoginManager()
        loginManager.logOut()
@@ -73,9 +86,34 @@ class ViewController: UIViewController,StationDataProtocol{
         stationTVHandler.updateStationData(stations: arrayOfStationData)
         self.tableView.reloadData()
     }
+    func updateProfilePicture(image:UIImage) {
+        self.addLogoutButton(image: image)
+    }
     
     func errorWithMessage(msg:String) {
         print(msg)
+    }
+    
+    func getUserFBData()
+    {
+        let graphRequest : GraphRequest = GraphRequest.init(graphPath: "me",parameters: ["fields": "id, first_name,email,picture.type(large)"])
+        graphRequest.start(completionHandler: { (connection, result, error) -> Void in
+            if ((error) != nil)
+            {
+                // Process error
+                print("Error: \(String(describing: error))")
+            }
+            else
+            {
+                let fbData = result as! NSDictionary
+                let fbProfilePic = fbData.value(forKey: "picture") as! NSDictionary
+                let fbProfilePicData = fbProfilePic.value(forKey: "data") as! NSDictionary
+                let fbProfilePicLink = fbProfilePicData.value(forKey: "url") as! String
+               self.httpclientObj?.getFBProfileImage(fromLink: fbProfilePicLink)
+                
+                
+            }
+        })
     }
 
 }

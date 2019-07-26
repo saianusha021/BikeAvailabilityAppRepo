@@ -39,22 +39,22 @@ class StationDetailViewController: UIViewController {
     }
     
     @IBAction func shareButtonTapped(_ sender: Any) {
-        
         let content = ShareLinkContent.init()
         content.contentURL = URL(string: "https://developers.facebook.com")!
-        
     }
    
     override func viewDidLoad() {
         super.viewDidLoad()
        self.addLogoutButton()
         self.addShareButton()
+        self.setUpTableView()
+    }
+    
+    func setUpTableView()  {
         self.tableView.delegate = stationDetTVHandler
         self.tableView.dataSource = stationDetTVHandler
         stationDetTVHandler.stationObj = self.stationObj!
-        // Do any additional setup after loading the view.
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         self.title = "Station"
     }
@@ -77,13 +77,6 @@ class StationDetailViewController: UIViewController {
         let constY:NSLayoutConstraint = NSLayoutConstraint(item: fbShareButton, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.goButton, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1, constant:0);
         self.view.addConstraint(constY);
         print(fbShareButton.frame)
-        
-        
-//        let constW:NSLayoutConstraint = NSLayoutConstraint(item: fbShareButton, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.width, multiplier: 1, constant: 0);
-//        self.view.addConstraint(constW);
-//
-//        let constH:NSLayoutConstraint = NSLayoutConstraint(item: fbShareButton, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.height, multiplier: 1, constant: 0);
-//        self.view.addConstraint(constH);
     }
     
     @objc func logOutButtonTapped() {

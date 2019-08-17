@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import FBSDKLoginKit
 import FacebookShare
 import FBSDKShareKit
 
@@ -17,8 +18,56 @@ class StationDetailViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var stationDetTVHandler = StationDetailTableViewHandler()
-    
     @IBOutlet weak var goButton: UIButton!
+    var fbProfileImage:UIImage!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if(userIsLoggedInWithFB()) {
+            self.showProfilePicture(image: self.fbProfileImage!)
+            self.addShareButton()
+            self.setUpTableView()
+        }
+            
+        else {
+            self.showLogInViewController()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = "Station"
+    }
+    func showProfilePicture(image:UIImage) {
+        let profileButton = UIButton(frame: CGRect(x:0, y: 0, width:45, height:45))
+        profileButton.addTarget(self, action: Selector("profilePictureTapped"), for: .touchUpInside)
+        profileButton.setImage(image, for: .normal)
+        let rightButton = UIBarButtonItem(customView: profileButton)
+        self.navigationItem.setRightBarButtonItems([rightButton], animated: true)
+    }
+    
+    func setUpTableView()  {
+        self.tableView.delegate = stationDetTVHandler
+        self.tableView.dataSource = stationDetTVHandler
+        stationDetTVHandler.stationObj = self.stationObj!
+    }
+    
+    @objc func profilePictureTapped() {
+        self.logOutButtonTapped()
+        var popoverContent = self.storyboard!.instantiateViewController(withIdentifier: "PopOverVC")
+        popoverContent.modalPresentationStyle = .popover
+        popoverContent.isModalInPopover = true
+        popoverContent.preferredContentSize = CGSize(width:100,height: 100)
+        self.present(popoverContent, animated: true, completion: nil)
+        
+    }
+    @objc func logOutButtonTapped() {
+        let loginManager = LoginManager()
+        loginManager.logOut()
+        self.showLogInViewController()
+    }
+    
+   
+    
     @IBAction func goButtonTapped(_ sender: Any) {
             
         let latitude: CLLocationDegrees = stationObj?.latitude! ?? 0.0
@@ -42,26 +91,7 @@ class StationDetailViewController: UIViewController {
         let content = ShareLinkContent.init()
         content.contentURL = URL(string: "https://developers.facebook.com")!
     }
-   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-       self.addLogoutButton()
-        self.addShareButton()
-        self.setUpTableView()
-    }
     
-    func setUpTableView()  {
-        self.tableView.delegate = stationDetTVHandler
-        self.tableView.dataSource = stationDetTVHandler
-        stationDetTVHandler.stationObj = self.stationObj!
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        self.title = "Station"
-    }
-    
-    func addLogoutButton() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "LogOut", style: .done, target: self, action: #selector(logOutButtonTapped))
-    }
     func addShareButton() {
         let fbShareButton = FBShareButton()
         //fbShareButton.center = view.center
@@ -78,12 +108,23 @@ class StationDetailViewController: UIViewController {
         self.view.addConstraint(constY);
         print(fbShareButton.frame)
     }
-    
-    @objc func logOutButtonTapped() {
-        
+   
+    func userIsLoggedInWithFB()->Bool {
+        return AccessToken.current != nil
+    }
+    func showLogInViewController() {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
+        self.navigationController!.present(vc, animated:false, completion: nil)
     }
     
+   
     
+//    func addLogoutButton() {
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "LogOut", style: .done, target: self, action: #selector(logOutButtonTapped))
+//    }
+
+    
+   
     
     
     /*

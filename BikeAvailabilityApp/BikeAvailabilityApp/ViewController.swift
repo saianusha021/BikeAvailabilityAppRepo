@@ -17,20 +17,27 @@ class ViewController: UIViewController,DataHandlerProtocol,UIPopoverControllerDe
     var stationTVHandler:StationsTableViewHandler = StationsTableViewHandler()
     var httpclientObj:HttpClient?
     var imageView:UIImageView?
-    var image :UIImage?
+    var fbProfileImage :UIImage?
+    var isDataLoaded:Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if(userIsLoggedInWithFB()) {
-           self.addLogoutButton(image: UIImage())
+        self.isDataLoaded = false
+        if(!userIsLoggedInWithFB()) {
+          self.showLogInViewController()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = "Stations"
+        if(userIsLoggedInWithFB() && !self.isDataLoaded) {
             self.initialSetUp()
         }
-        
         else {
             self.showLogInViewController()
         }
-        
     }
+    
     func initialSetUp() {
         self.tableView.dataSource = stationTVHandler
         self.tableView.delegate = stationTVHandler
@@ -42,7 +49,7 @@ class ViewController: UIViewController,DataHandlerProtocol,UIPopoverControllerDe
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
         self.navigationController!.present(vc, animated:false, completion: nil)
     }
-    func addLogoutButton(image:UIImage) {
+    func showFBProfileImage(image:UIImage) {
         let profileButton = UIButton(frame: CGRect(x:0, y: 0, width:45, height:45))
         profileButton.addTarget(self, action: Selector("profilePictureTapped"), for: .touchUpInside)
         profileButton.setImage(image, for: .normal)
@@ -51,7 +58,8 @@ class ViewController: UIViewController,DataHandlerProtocol,UIPopoverControllerDe
     }
     
     @objc func profilePictureTapped() {
-    var popoverContent = self.storyboard!.instantiateViewController(withIdentifier: "PopOverVC")
+        self.logOutButtonTapped()
+        var popoverContent = self.storyboard!.instantiateViewController(withIdentifier: "PopOverVC")
        popoverContent.modalPresentationStyle = .popover
         popoverContent.isModalInPopover = true
         popoverContent.preferredContentSize = CGSize(width:100,height: 100)
@@ -66,12 +74,7 @@ class ViewController: UIViewController,DataHandlerProtocol,UIPopoverControllerDe
     func userIsLoggedInWithFB()->Bool {
         return AccessToken.current != nil
     }
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.title = "Stations"
-    }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         self.title = ""
     }
@@ -80,6 +83,7 @@ class ViewController: UIViewController,DataHandlerProtocol,UIPopoverControllerDe
         let stationDetailVC = segue.destination as! StationDetailViewController
         let selectedCellRow:Int = self.tableView.indexPathForSelectedRow!.row
         stationDetailVC.stationObj = stationTVHandler.arrOfStations[selectedCellRow]
+        stationDetailVC.fbProfileImage = self.fbProfileImage
     }
 
     func updateStationData(arrayOfStationData:[Station]) {
@@ -87,7 +91,8 @@ class ViewController: UIViewController,DataHandlerProtocol,UIPopoverControllerDe
         self.tableView.reloadData()
     }
     func updateProfilePicture(image:UIImage) {
-        self.addLogoutButton(image: image)
+        self.fbProfileImage = image
+        self.showFBProfileImage(image: image)
     }
     
     func errorWithMessage(msg:String) {

@@ -24,7 +24,9 @@ class StationDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if(userIsLoggedInWithFB()) {
-            self.showProfilePicture(image: self.fbProfileImage!)
+            if(self.fbProfileImage != nil) {
+                self.showFBProfilePicture(image: self.fbProfileImage!)
+            }
             self.addShareButton()
             self.setUpTableView()
         }
@@ -37,7 +39,7 @@ class StationDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.title = "Station"
     }
-    func showProfilePicture(image:UIImage) {
+    func showFBProfilePicture(image:UIImage) {
         let profileButton = UIButton(frame: CGRect(x:0, y: 0, width:45, height:45))
         profileButton.addTarget(self, action: Selector("profilePictureTapped"), for: .touchUpInside)
         profileButton.setImage(image, for: .normal)
@@ -48,7 +50,11 @@ class StationDetailViewController: UIViewController {
     func setUpTableView()  {
         self.tableView.delegate = stationDetTVHandler
         self.tableView.dataSource = stationDetTVHandler
-        stationDetTVHandler.stationObj = self.stationObj!
+        
+        if(self.stationObj != nil) {
+            stationDetTVHandler.stationObj = self.stationObj!
+            
+        }
     }
     
     @objc func profilePictureTapped() {
@@ -65,8 +71,6 @@ class StationDetailViewController: UIViewController {
         loginManager.logOut()
         self.showLogInViewController()
     }
-    
-   
     
     @IBAction func goButtonTapped(_ sender: Any) {
             
